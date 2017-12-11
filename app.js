@@ -27,6 +27,26 @@ var users = require('./routes/users');
 
 var app = express();
 
+if (process.env.NODE_ENV !== 'production') {
+  var webpack = require('webpack');
+  var webpackConfig = require('./webpack.config.js');
+  var webpackCompiled = webpack(webpackConfig);
+  var webpackDevMiddleware = require('webpack-dev-middleware');
+  app.use(webpackDevMiddleware(webpackCompiled, {
+    publicPath: webpackConfig.output.publicPath,
+    stats: { color: true },
+    lazy: false,
+    watchOptions: {
+      aggregateTimeout: 300,
+      poll: true
+    },
+  }));
+
+  // config hot reloading
+  var webpackHotMiddleware = require('webpack-hot-middleware');
+  app.use(webpackHotMiddleware(webpackCompiled));
+}
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -38,6 +58,16 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+// allow cross domain access
+app.all('*', function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  res.header("Access-Control-Allow-Methods","PUT,POST,GET,DELETE,OPTIONS");
+  res.header("X-Powered-By",' 3.2.1');
+  res.header("Content-Type", "application/json;charset=utf-8");
+  next();
+});
 
 app.use('/', index);
 app.use('/users', users);
