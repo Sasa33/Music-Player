@@ -22,8 +22,7 @@ mongoose.connection.on('disconnected', function() {
 
 
 
-var index = require('./routes/index');
-var users = require('./routes/users');
+var user = require('./server/routes/user');
 
 var app = express();
 
@@ -69,8 +68,7 @@ app.all('*', function(req, res, next) {
   next();
 });
 
-app.use('/', index);
-app.use('/users', users);
+app.use('/api', user);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
