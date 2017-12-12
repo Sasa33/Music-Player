@@ -8,7 +8,7 @@ import Home from './pages/home';
 import Login from './pages/login';
 
 render((
-  <Provider>
+  <Provider store={store}>
     <HashRouter>
       <div>
         <Route exact path="/" component={Home} />
@@ -17,6 +17,6 @@ render((
   </Provider>
 ), document.getElementById('content'));
 
-if(module.hot) {
-	module.hot.accept();
+if (module.hot) {
+  module.hot.accept();
 }

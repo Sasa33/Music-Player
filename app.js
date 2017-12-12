@@ -32,8 +32,8 @@ if (process.env.NODE_ENV !== 'production') {
   var webpackCompiled = webpack(webpackConfig);
   var webpackDevMiddleware = require('webpack-dev-middleware');
   app.use(webpackDevMiddleware(webpackCompiled, {
-    publicPath: webpackConfig.output.publicPath,
-    stats: { color: true },
+    publicPath:webpackConfig.output.publicPath,
+    stats: {colors: true},
     lazy: false,
     watchOptions: {
       aggregateTimeout: 300,

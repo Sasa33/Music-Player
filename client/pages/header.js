@@ -27,7 +27,6 @@ class Header extends Component {
         <div className='sildebar-user-info'>
             <div>登录网易云音乐</div>
             <div>320K高音质无限下载，手机电脑多端同步</div>
-            //点击立即登录跳转至登录页面
             <Link to='/loginhome'>立即登录</Link>
         </div>
         <List.Item key='1'><a href=''><FontAwesome key='envelope-o' name="envelope-o" /> <span>我的消息</span></a></List.Item>
@@ -36,9 +35,9 @@ class Header extends Component {
         <List.Item key='4'><a href=''><FontAwesome key='archive' name="archive" /> <span>在线听歌免流量</span></a></List.Item>
         <div className=''></div>
         <List.Item key='5'><a href=''><FontAwesome key='user-o' name="user-o" /> <span>我的好友</span></a></List.Item>
-        <List.Item key='6'><a href=''><FontAwesome key='envelope-o' name="envelope-o" /> <span>附近的人</span></a><span className="">网易云音乐《未来金话筒》播音主持大赛</span></List.Item>
+        <List.Item key='6'><a href=''><FontAwesome key='envelope-o' name="envelope-o" /> <span>附近的人</span></a></List.Item>
         <div className=''></div>
-        <List.Item key='7'><a href=''><FontAwesome key='street-view' name="street-view" /> <span>更新换肤</span></a><span className="">官方红</span></List.Item>
+        <List.Item key='7'><a href=''><FontAwesome key='street-view' name="street-view" /> <span>更新换肤</span></a></List.Item>
         <List.Item key='8'><a href=''><FontAwesome key='music' name="music" /> <span>听歌识曲</span></a></List.Item>
         <List.Item key='9'><a href=''><FontAwesome key='bell-o' name="bell-o" /> <span>定时停止播放</span></a></List.Item>
         <List.Item key='10'><a href=''><FontAwesome key='clock-o' name="clock-o" /> <span>音乐闹钟</span></a></List.Item>
@@ -56,11 +55,8 @@ class Header extends Component {
               onLeftClick={this.onOpenChange.bind(this)}
           >
             <Flex>
-                //跳转至本地音乐
                 <Flex.Item><Link to='/music'><FontAwesome key='music' name="music" /></Link></Flex.Item>
-                //跳转至首页
                 <Flex.Item><Link to='/'><img className='small-logo' src='/svgs/personal-active.svg'/></Link></Flex.Item>
-                //跳转至朋友圈，本课程没有实现页面内容
                 <Flex.Item><Link to='/friends'><FontAwesome key='user' name="user"/></Link></Flex.Item>
             </Flex>
           </NavBar>
