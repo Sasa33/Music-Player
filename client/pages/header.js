@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Drawer, List, NavBar, Flex } from 'ant-mobile';
+import { Drawer, List, NavBar, Flex } from 'antd-mobile';
 import FontAwesome from 'react-fontawesome';
 
 import '../styles/header.less';
