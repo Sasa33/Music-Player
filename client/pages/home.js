@@ -1,15 +1,54 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react';
+import {Tabs} from 'antd-mobile';
+import LazyLoad from 'react-lazyload';
+import Header from './header'
+import {connect} from 'react-redux';
+import '../styles/home.less'
+
+const TabPane = Tabs.TabPane;
+
 
 class Home extends Component {
-    constructor(props) {
-        super(props);
-    }
+  constructor(props) {
+    super(props);
+  }
 
-    render() {
-        return(
-            <div>This is home page.</div> 
-        )
-    }
+  render() {
+    return (
+      <div>
+        <Header/>
+        <Tabs defaultActiveKey="1" swippeable={false}>
+          <TabPane tab="个性推荐" key="1">
+            <div style={{ display: 'flex', alignItems: 'left', justifyContent: 'center',  backgroundColor: '#fff' }}>
+              <LazyLoad height={200}>
+                <span>这是歌单页面</span>
+              </LazyLoad>
+            </div>
+          </TabPane>
+          <TabPane tab="歌单" key="2">
+            <div style={{ display: 'flex', alignItems: 'left', justifyContent: 'center',  backgroundColor: '#fff' }}>
+              <LazyLoad height={200}>
+                <span>这是歌单页面</span>
+              </LazyLoad>
+            </div>
+          </TabPane>
+          <TabPane tab="排行榜" key="3">
+            <div style={{ display: 'flex', alignItems: 'left', justifyContent: 'center',  backgroundColor: '#fff' }}>
+              <LazyLoad height={200}>
+                <span>这是排行榜页面</span>
+              </LazyLoad>
+            </div>
+          </TabPane>
+        </Tabs>
+      </div>
+    )
+  }
 }
 
-export default Home;
+function select(state) {
+  return {
+
+  }
+}
+
+export default connect(select)(Home);

@@ -1,21 +1,20 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 import { HashRouter, Router, Route, hashHistory, Link } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import store from './store/store';
 
 import Home from './pages/home';
 import Login from './pages/login';
 
 render((
-  <HashRouter>
-    <div>
-      <ul>
-        <li><Link to='/'>Home page</Link></li>
-        <li><Link to='/login'>Login page</Link></li>
-      </ul>
-      <Route exact path="/" component={Home} />
-      <Route path="/login" component={Login} />
-    </div>
-  </HashRouter>
+  <Provider>
+    <HashRouter>
+      <div>
+        <Route exact path="/" component={Home} />
+      </div>
+    </HashRouter>
+  </Provider>
 ), document.getElementById('content'));
 
 if(module.hot) {
