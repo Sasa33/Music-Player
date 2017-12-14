@@ -8,22 +8,22 @@ var mongoose = require('mongoose');
 var DB_URL = 'mongodb://localhost:27017/myapp';
 
 var MongoClient = require('mongodb').MongoClient;
-var fs = require('fs');
-
-var file = "./mongoDB/songs.json";
-var songs = JSON.parse(fs.readFileSync(file));
-
-var file2 = "./mongoDB/mv.json";
-var mv = JSON.parse(fs.readFileSync(file2));
-
-var file3 = "./mongoDB/djprogram.json";
-var djprogram = JSON.parse(fs.readFileSync(file3));
-
-var file4 = "./mongoDB/personal.json";
-var personal = JSON.parse(fs.readFileSync(file4));
-
-var file5 = "./mongoDB/privateContent.json";
-var privateContent = JSON.parse(fs.readFileSync(file5));
+// var fs = require('fs');
+//
+// var file = "./mongoDB/songs.json";
+// var songs = JSON.parse(fs.readFileSync(file));
+//
+// var file2 = "./mongoDB/mv.json";
+// var mv = JSON.parse(fs.readFileSync(file2));
+//
+// var file3 = "./mongoDB/djprogram.json";
+// var djprogram = JSON.parse(fs.readFileSync(file3));
+//
+// var file4 = "./mongoDB/personal.json";
+// var personal = JSON.parse(fs.readFileSync(file4));
+//
+// var file5 = "./mongoDB/privateContent.json";
+// var privateContent = JSON.parse(fs.readFileSync(file5));
 
 mongoose.connect(DB_URL, {useMongoClient: true});
 mongoose.connection.on('connected', function() {
@@ -38,13 +38,13 @@ mongoose.connection.on('disconnected', function() {
   console.log('disconnected');
 });
 
-MongoClient.connect(DB_URL, function (err, db) {
-  db.collection('Songs').insert(songs);
-  db.collection('MV').insert(mv);
-  db.collection('djprogram').insert(djprogram);
-  db.collection('personalized').insert(personal);
-  db.collection('privatecontent').insert(privateContent);
-});
+// MongoClient.connect(DB_URL, function (err, db) {
+//   db.collection('Songs').insert(songs);
+//   db.collection('MV').insert(mv);
+//   db.collection('djprogram').insert(djprogram);
+//   db.collection('personalized').insert(personal);
+//   db.collection('privatecontent').insert(privateContent);
+// });
 
 
 
