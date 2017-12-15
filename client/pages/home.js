@@ -1,11 +1,19 @@
-import React, {Component} from 'react';
-import {Tabs} from 'antd-mobile';
+import React, { Component } from 'react';
+import { Tabs, Badge } from 'antd-mobile';
 import LazyLoad from 'react-lazyload';
 import Header from './header'
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 import '../styles/home.less'
 
+import Recommend from '../components/Home/recommend';
+
 const TabPane = Tabs.TabPane;
+
+const tabs = [
+  { title: "个性推荐" },
+  { title: "歌单" },
+  { title: "排行榜" },
+];
 
 
 class Home extends Component {
@@ -14,31 +22,29 @@ class Home extends Component {
   }
 
   render() {
-    return (
+    return(
       <div>
-        <Header/>
-        <Tabs defaultActiveKey="1" swippeable={false}>
-          <TabPane tab="个性推荐" key="1">
-            <div style={{ display: 'flex', alignItems: 'left', justifyContent: 'center',  backgroundColor: '#fff' }}>
-              <LazyLoad height={200}>
-                <span>这是歌单页面</span>
-              </LazyLoad>
-            </div>
-          </TabPane>
-          <TabPane tab="歌单" key="2">
-            <div style={{ display: 'flex', alignItems: 'left', justifyContent: 'center',  backgroundColor: '#fff' }}>
-              <LazyLoad height={200}>
-                <span>这是歌单页面</span>
-              </LazyLoad>
-            </div>
-          </TabPane>
-          <TabPane tab="排行榜" key="3">
-            <div style={{ display: 'flex', alignItems: 'left', justifyContent: 'center',  backgroundColor: '#fff' }}>
-              <LazyLoad height={200}>
-                <span>这是排行榜页面</span>
-              </LazyLoad>
-            </div>
-          </TabPane>
+        <Header />
+        <Tabs tabs={tabs}
+              initialPage={1}
+              onChange={(tab, index) => { console.log('onChange', index, tab); }}
+              onTabClick={(tab, index) => { console.log('onTabClick', index, tab); }}
+        >
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '150px', backgroundColor: '#fff' }}>
+            <LazyLoad height={200}>
+              <Recommend/>
+            </LazyLoad>
+          </div>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '150px', backgroundColor: '#fff' }}>
+            <LazyLoad height={200}>
+              <span>这是歌单页面</span>
+            </LazyLoad>
+          </div>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '150px', backgroundColor: '#fff' }}>
+            <LazyLoad height={200}>
+              <span>这是排行榜页面</span>
+            </LazyLoad>
+          </div>
         </Tabs>
       </div>
     )
