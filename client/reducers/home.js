@@ -1,14 +1,14 @@
-import { CHANGE_TEST } from '../actions/home';
+import { GET_PERSONAL_DETAIL } from '../actions/home';
 
 const initialState = {
-  test: ''
+  personalizedDetail: []
 };
 
 export default function user(state = initialState, action) {
   switch(action.type) {
-    case CHANGE_TEST:
+    case GET_PERSONAL_DETAIL:
       return Object.assign({}, state, {
-        test: action.test,
+        personalizedDetail: action.personalizedDetail,
       });
     default:
       return state;
