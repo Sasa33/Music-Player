@@ -8,7 +8,7 @@ var mongoose = require('mongoose');
 var DB_URL = 'mongodb://localhost:27017/myapp';
 
 var MongoClient = require('mongodb').MongoClient;
-// var fs = require('fs');
+var fs = require('fs');
 //
 // var file = "./mongoDB/songs.json";
 // var songs = JSON.parse(fs.readFileSync(file));
@@ -24,6 +24,9 @@ var MongoClient = require('mongodb').MongoClient;
 //
 // var file5 = "./mongoDB/privateContent.json";
 // var privateContent = JSON.parse(fs.readFileSync(file5));
+//
+// var file6 = "./mongoDB/playlists.json";
+// var playLists = JSON.parse(fs.readFileSync(file6));
 
 mongoose.connect(DB_URL, {useMongoClient: true});
 mongoose.connection.on('connected', function() {
@@ -44,6 +47,7 @@ mongoose.connection.on('disconnected', function() {
 //   db.collection('djprogram').insert(djprogram);
 //   db.collection('personalized').insert(personal);
 //   db.collection('privatecontent').insert(privateContent);
+//   db.collection('PlayList').insert(playLists);
 // });
 
 

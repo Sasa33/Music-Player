@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import '../styles/home.less';
 
 import Recommend from '../components/Home/recommend';
+import PlayList from '../components/Home/playList';
 
 
 const tabs = [
@@ -36,7 +37,7 @@ class Home extends Component {
           </div>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#fff' }}>
             <LazyLoad height={200}>
-              <span>这是歌单页面</span>
+              <PlayList/>
             </LazyLoad>
           </div>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#fff' }}>

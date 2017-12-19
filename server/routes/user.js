@@ -12,5 +12,6 @@ router.get('/newsongs', home.getNewSongs);
 router.get('/mv', home.getMV);
 router.get('/djprogram', home.getDJProgram);
 router.get('/privatecontent', home.getPrivatecontent);
+router.get('/playlist', home.getPlayList);
 
 module.exports = router;
