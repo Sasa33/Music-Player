@@ -4,6 +4,7 @@ import {
   connect
 } from "react-redux";
 import { Flex } from 'antd-mobile';
+import { getPlaylist } from '../../actions/home';
 
 class PlayList extends Component {
   constructor(props) {
@@ -11,10 +12,12 @@ class PlayList extends Component {
   }
 
   componentDidMount() {
-
+    this.props.dispatch(getPlaylist())
   }
 
   render() {
+    console.log('test...')
+    console.log(this.props)
     return(
       <div className="palylist">
         <a href='#' className='banner'>
@@ -35,6 +38,18 @@ class PlayList extends Component {
             </Flex>
           </div>
         </div>
+        {
+          this.props.playlistDetail.map((item, index) => (
+              <div className='playlists-content' key={index}>
+                <div>
+                  <img src={item.coverImgUrl}/>
+                </div>
+                <div className='song-describition'>{item.name}</div>
+                <div className='creator'>by {item.creatorName}</div>
+              </div>
+            )
+          )
+        }
       </div>
     )
   }
@@ -42,8 +57,8 @@ class PlayList extends Component {
 
 function select(state){
   return{
-
+    playlistDetail: state.home.playlistDetail,
   }
 }
 
-export default connect(select) (PlayList);
+export default connect(select)(PlayList);

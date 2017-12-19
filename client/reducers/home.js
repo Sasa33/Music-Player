@@ -1,7 +1,8 @@
-import { GET_PERSONAL_DETAIL } from '../actions/home';
+import { GET_PERSONAL_DETAIL, GET_PLAYLIST_DETAIL } from '../actions/home';
 
 const initialState = {
-  personalizedDetail: []
+  personalizedDetail: [],
+  playlistDetail: [],
 };
 
 export default function user(state = initialState, action) {
@@ -9,6 +10,10 @@ export default function user(state = initialState, action) {
     case GET_PERSONAL_DETAIL:
       return Object.assign({}, state, {
         personalizedDetail: action.personalizedDetail,
+      });
+    case GET_PLAYLIST_DETAIL:
+      return Object.assign({}, state, {
+        playlistDetail: action.playlistDetail,
       });
     default:
       return state;
