@@ -17,6 +17,7 @@
     "express": "~4.15.2",
     "mongoose": "^4.13.6",
     "morgan": "~1.8.1",
+    "rc-form": "^2.1.6",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.6",
