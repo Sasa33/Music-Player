@@ -5,13 +5,16 @@ import { Provider } from 'react-redux';
 import store from './store/store';
 
 import Home from './pages/home';
-import Login from './pages/login';
+import Friends from './pages/friends';
+import Music from './pages/music';
 
 render((
   <Provider store={store}>
     <HashRouter>
       <div>
         <Route exact path="/" component={Home} />
+        <Route exact path="/friends" component={Friends} />
+        <Route exact path="/music" component={Music} />
       </div>
     </HashRouter>
   </Provider>

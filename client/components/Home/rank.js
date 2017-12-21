@@ -29,13 +29,15 @@ class Ranking extends Component {
           ))
         }
         <div className="rank-title">全球榜</div>
-        {
-          nationalRank.map((item, index) => (
-            <div key={index} className='official-content'>
-              <img src={item.coverImgUrl}/>
-            </div>
-          ))
-        }
+        <div className='global-rank'>
+          {
+            nationalRank.map((item, index) => (
+              <div key={index} className='official-content'>
+                <img src={item.coverImgUrl}/>
+              </div>
+            ))
+          }
+        </div>
       </div>
     )
   }
