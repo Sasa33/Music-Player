@@ -16,8 +16,6 @@ class PlayList extends Component {
   }
 
   render() {
-    console.log('test...')
-    console.log(this.props)
     return(
       <div className="palylist">
         <a href='#' className='banner'>

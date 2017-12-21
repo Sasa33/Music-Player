@@ -7,6 +7,7 @@ import '../styles/home.less';
 
 import Recommend from '../components/Home/recommend';
 import PlayList from '../components/Home/playList';
+import Ranking from '../components/Home/rank';
 
 
 const tabs = [
@@ -42,7 +43,7 @@ class Home extends Component {
           </div>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#fff' }}>
             <LazyLoad height={200}>
-              <span>这是排行榜页面</span>
+              <Ranking/>
             </LazyLoad>
           </div>
         </Tabs>

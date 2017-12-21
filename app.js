@@ -27,6 +27,9 @@ var fs = require('fs');
 //
 // var file6 = "./mongoDB/playlists.json";
 // var playLists = JSON.parse(fs.readFileSync(file6));
+//
+// var file7 = "./mongoDB/rank.json";
+// var rank = JSON.parse(fs.readFileSync(file7));
 
 mongoose.connect(DB_URL, {useMongoClient: true});
 mongoose.connection.on('connected', function() {
@@ -41,14 +44,15 @@ mongoose.connection.on('disconnected', function() {
   console.log('disconnected');
 });
 
-// MongoClient.connect(DB_URL, function (err, db) {
-//   db.collection('Songs').insert(songs);
-//   db.collection('MV').insert(mv);
-//   db.collection('djprogram').insert(djprogram);
-//   db.collection('personalized').insert(personal);
-//   db.collection('privatecontent').insert(privateContent);
-//   db.collection('PlayList').insert(playLists);
-// });
+MongoClient.connect(DB_URL, function (err, db) {
+  // db.collection('Songs').insert(songs);
+  // db.collection('MV').insert(mv);
+  // db.collection('djprogram').insert(djprogram);
+  // db.collection('personalized').insert(personal);
+  // db.collection('privatecontent').insert(privateContent);
+  // db.collection('PlayList').insert(playLists);
+  // db.collection('Rank').insert(rank);
+});
 
 
 
