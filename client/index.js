@@ -10,17 +10,19 @@ import Music from './pages/music';
 import LoginHome from './pages/loginHome';
 import Login from './components/Login/login';
 import Register from './components/Login/register';
+import Search from './pages/search';
 
 render((
   <Provider store={store}>
     <HashRouter>
       <div>
         <Route exact path="/" component={Home} />
-        <Route exact path="/friends" component={Friends} />
-        <Route exact path="/music" component={Music} />
-        <Route exact path="/loginHome" component={LoginHome} />
-        <Route exact path="/login" component={Login} />
-        <Route exact path="/register" component={Register} />
+        <Route path="/friends" component={Friends} />
+        <Route path="/music" component={Music} />
+        <Route path="/loginHome" component={LoginHome} />
+        <Route path="/login" component={Login} />
+        <Route path="/register" component={Register} />
+        <Route path="/search" component={Search} />
       </div>
     </HashRouter>
   </Provider>
