@@ -11,6 +11,8 @@ import LoginHome from './pages/loginHome';
 import Login from './components/Login/login';
 import Register from './components/Login/register';
 import Search from './pages/search';
+import Footer from "./pages/footer";
+import PlayDetail from './components/Player/playDetail';
 
 render((
   <Provider store={store}>
@@ -23,6 +25,8 @@ render((
         <Route path="/login" component={Login} />
         <Route path="/register" component={Register} />
         <Route path="/search" component={Search} />
+        <Route path="/playing" component={PlayDetail} />
+        <Footer/>
       </div>
     </HashRouter>
   </Provider>
